@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="AI">
+      <UniqueIdentifier>{e6945c3b-d128-4c8b-99e9-7d8b0885787f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommonClass">
+      <UniqueIdentifier>{70c2df81-7c1d-417a-8d0e-c495ebb5682b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameEngine">
+      <UniqueIdentifier>{28a7c743-c33f-4312-859b-598497dc1f8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SFMLRenderer">
+      <UniqueIdentifier>{215086b7-6327-44d4-a938-f7c2f3ea55c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileLoad">
+      <UniqueIdentifier>{00e91929-097e-419a-9fa2-b30205099340}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="SFMLRenderer\Button.cpp">
+      <Filter>SFMLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLRenderer\GameRenderer.cpp">
+      <Filter>SFMLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLRenderer\Painter.cpp">
+      <Filter>SFMLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="SFMLRenderer\Window.cpp">
+      <Filter>SFMLRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_engine\GameEngine.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game_engine\KeyPress.cpp">
+      <Filter>GameEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonClass\Map.cpp">
+      <Filter>CommonClass</Filter>
+    </ClCompile>
+    <ClCompile Include="AI\SimpleAI.cpp">
+      <Filter>AI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SFMLRenderer\Button.h">
+      <Filter>SFMLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLRenderer\GameRenderer.h">
+      <Filter>SFMLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLRenderer\Painter.h">
+      <Filter>SFMLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="SFMLRenderer\Window.h">
+      <Filter>SFMLRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_engine\GameEngine.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_engine\KeyPress.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game_engine\Player.h">
+      <Filter>GameEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoad\Audio.h">
+      <Filter>FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoad\Font.h">
+      <Filter>FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoad\Texture.h">
+      <Filter>FileLoad</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonClass\Coordinate.h">
+      <Filter>CommonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonClass\Map.h">
+      <Filter>CommonClass</Filter>
+    </ClInclude>
+    <ClInclude Include="AI\SimpleAI.h">
+      <Filter>AI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
