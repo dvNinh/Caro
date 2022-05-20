@@ -23,7 +23,7 @@
 - Thông báo kết thúc game, có thể chơi lại
 - Hai cách chơi: với máy hoặc với người
 ### *Video minh họa:* https://youtu.be/r5eIRT84WNM
-## 4. Các kỹ thuật lập trình:
+## 4. Các kỹ thuật lập trình
 - Con trỏ, mảng, chia tách file, hướng đối tượng
 - Sử dụng một số lớp của thư viện SFML
 - Học SFML tại https://www.sfml-dev.org/tutorials/2.5/
