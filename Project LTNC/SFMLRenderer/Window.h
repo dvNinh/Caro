@@ -43,6 +43,5 @@ public:
 	void RenderGameResult(GameEngine* _gameEngine, int _key);
 	void RenderGamePause(GameEngine* _gameEngine, int _key);
 
-	void ActiveGameButton(GameEngine* _gameEngine, int _key, Button _buttonList[], int _numButton);
-	void ActiveMenuButton(int _key, Button _buttonList[], int _numButton);
+	void ActiveButton(GameEngine* _gameEngine, int _key, Button _buttonList[], int _numButton);
 };

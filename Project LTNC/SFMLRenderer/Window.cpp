@@ -44,7 +44,7 @@ void Window::LoadMenu() {
 
 	KeyPress key(window);
 	key.UpdateKey();
-	ActiveMenuButton(key.GetKey(), buttonList, numButton);
+	ActiveButton(nullptr, key.GetKey(), buttonList, numButton);
 	window->display();
 }
 void Window::LoadGame(int _gameMode) {
@@ -104,7 +104,7 @@ void Window::RenderGameResult(GameEngine* _gameEngine, int _key) {
 		buttonList[i].SetThick(sf::Vector2f(10.0f, 4.0f));
 	}
 
-	ActiveGameButton(_gameEngine, _key, buttonList, numButton);
+	ActiveButton(_gameEngine, _key, buttonList, numButton);
 }
 void Window::RenderGamePause(GameEngine* _gameEngine, int _key) {
 	sf::Vector2f pos(window->getSize().x / 2.0f, window->getSize().y / 2.0f);
@@ -135,7 +135,7 @@ void Window::RenderGamePause(GameEngine* _gameEngine, int _key) {
 		buttonList[i].SetPosition(pos + sf::Vector2f(0.0f, 65.0f * i - 25.0f));
 	}
 
-	ActiveGameButton(_gameEngine, _key, buttonList, numButton);
+	ActiveButton(_gameEngine, _key, buttonList, numButton);
 	if (_key == KEY::KEY_ESCAPE) {
 		_gameEngine->SetStatus(STATUS::RUNNING);
 	}
@@ -178,43 +178,9 @@ void Window::RenderGameInfo(GameEngine* _gameEngine) {
 	painter->DrawRectangle(pos2, size2, sf::Vector2f(BORDER_THICK, BORDER_THICK));
 	painter->DrawTexture(texture.GetRuleTexture(), pos2 - size2 / 2.0f);
 }
-void Window::ActiveGameButton(GameEngine* _gameEngine, int _key, Button _buttonList[], int _numButton) {
+void Window::ActiveButton(GameEngine* _gameEngine, int _key, Button _buttonList[], int _numButton) {
 	if (_key == KEY::KEY_EXIT) {
-		_gameEngine->SetStatus(STATUS::EXIT);
-	}
-	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
-	for (int i = 0; i < _numButton; i++) {
-		if (_buttonList[i].IsMouseOn(mousePos)) {
-			_buttonList[i].Blur();
-			if (_key == KEY::MOUSE_LEFT_RELEASED) {
-				switch (_buttonList[i].GetType()) {
-				case BUTTON::BUTTON_MENU:
-					_gameEngine->SetStatus(STATUS::RETURN);
-					break;
-				case BUTTON::BUTTON_RESTART:
-					_gameEngine->SetStatus(STATUS::RESTART);
-					break;
-				case BUTTON::BUTTON_RESUME:
-					_gameEngine->SetStatus(STATUS::RUNNING);
-					break;
-				case BUTTON::BUTTON_MUSIC:
-					if (isMusicOn) {
-						music.StopSoundtrack();
-						isMusicOn = false;
-					}
-					else {
-						music.PlaySoundtrack();
-						isMusicOn = true;
-					}
-					break;
-				}
-			}
-		}
-		_buttonList[i].Draw(window, font.GetArialFont());
-	}
-}
-void Window::ActiveMenuButton(int _key, Button _buttonList[], int _numButton) {
-	if (_key == KEY::KEY_EXIT) {
+		if (_gameEngine != nullptr) _gameEngine->SetStatus(STATUS::EXIT);
 		mode = MODE::MODE_EXIT;
 	}
 	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
@@ -231,6 +197,15 @@ void Window::ActiveMenuButton(int _key, Button _buttonList[], int _numButton) {
 					break;
 				case BUTTON::BUTTON_EXIT:
 					SetMode(MODE_EXIT);
+					break;
+				case BUTTON::BUTTON_MENU:
+					_gameEngine->SetStatus(STATUS::RETURN);
+					break;
+				case BUTTON::BUTTON_RESTART:
+					_gameEngine->SetStatus(STATUS::RESTART);
+					break;
+				case BUTTON::BUTTON_RESUME:
+					_gameEngine->SetStatus(STATUS::RUNNING);
 					break;
 				case BUTTON::BUTTON_MUSIC:
 					if (isMusicOn) {
