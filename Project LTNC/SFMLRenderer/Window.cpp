@@ -199,13 +199,13 @@ void Window::ActiveButton(GameEngine* _gameEngine, int _key, Button _buttonList[
 					SetMode(MODE_EXIT);
 					break;
 				case BUTTON::BUTTON_MENU:
-					_gameEngine->SetStatus(STATUS::RETURN);
+					if (_gameEngine != nullptr) _gameEngine->SetStatus(STATUS::RETURN);
 					break;
 				case BUTTON::BUTTON_RESTART:
-					_gameEngine->SetStatus(STATUS::RESTART);
+					if (_gameEngine != nullptr) _gameEngine->SetStatus(STATUS::RESTART);
 					break;
 				case BUTTON::BUTTON_RESUME:
-					_gameEngine->SetStatus(STATUS::RUNNING);
+					if (_gameEngine != nullptr) _gameEngine->SetStatus(STATUS::RUNNING);
 					break;
 				case BUTTON::BUTTON_MUSIC:
 					if (isMusicOn) {
