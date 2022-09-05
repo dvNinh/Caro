@@ -38,4 +38,4 @@
 - Tăng khả năng cho máy để có thể thắng đươc người
 - Thêm một số tính năng như lưu game, nhập tên người chơi, các kiểu chơi khác,...
 
-///_____DINHVANNINH___21020362_____///
+___DINHVANNINH___21020362___/////
